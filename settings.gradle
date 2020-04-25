@@ -1,0 +1,2 @@
+rootProject.name='Limsa-automaatti'
+include ':app'
