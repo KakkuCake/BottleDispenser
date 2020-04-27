@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.button4:
+                readFileAndWriteReceipt();
                 Toast.makeText(getApplicationContext(), "Your receipt is in file 'receipt.txt'", Toast.LENGTH_LONG).show();
                 break;
         }
@@ -92,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (resultCode == RESULT_OK) {
                 int result = data.getIntExtra("amount", 0);
                 bdispenser.addMoney(result);
+                Toast.makeText(MainActivity.this, "You have added " + result + "€!", Toast.LENGTH_SHORT).show();
             }
             if (resultCode == RESULT_CANCELED) {
                 textView2.setText("Nothing selected");
